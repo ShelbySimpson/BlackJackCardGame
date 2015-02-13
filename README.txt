@@ -11,14 +11,15 @@ integration_test2.cpp - Performs integration tests on Deck, Card and Hand classe
 unitPlayer.cpp - Performs unit tests on Player class.
 playerInteg.cpp - Performs integration tests on Deck, Card, Hand and Player classes.
 makefile - a MakeFile for compiling.
+
 Instructions for running tests -
 To run unit tests enter: make unitCard
-ouput file: unitCard
+							ouput file: unitCard
 To run integration_ enter: make integ1
-output file: integ1
+							output file: integ1
 To run integration_test2 enter: make integ2
-output file: integ2
+							output file: integ2
 To run unitPlayer enter: make unitPlayer
-output file: unitPlayer
+							output file: unitPlayer
 To run playerInteg enter: make integ3
-output file: integ3
+							output file: integ3
