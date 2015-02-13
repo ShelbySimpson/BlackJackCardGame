@@ -34,3 +34,4 @@ Test Path: A deck with 16 sets is created. A player is dealt 2 cards at a time u
 Integration testing – I tested my playerIntegration.cpp several times with different values.  I also went through the previous tests. I was able to test most of the interactions between all the classes.
 
 System testing – The overall design of the system still does as expected. With the addition of the player class a player can now have a hand (card hand) that is unique to that player. The player has the basic functions that are expected in a blackjack game.
+
