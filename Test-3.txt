@@ -1,0 +1,36 @@
+For unit testing I created a Player object which sets name to "", bust to 0, stay to 0. I then used my getter functions to test these values. In the process getName(), getBust() and getStays() is tested. These functions will be further tested in integration testing. I also test setName() to check that it sets name and that it will not allow more than ten characters for a name. The rest of the Player functions are tested with integration testing due to the nature of their use.
+Test Requirement: Test Player creation.
+Test Path: Use getter functions(getName(),getBust(),getStays()) to check variable values.
+Test Requirement: Test setName().
+Test Path: setName() to Shelby and getName() to print.
+
+Test Requirement: Test that setName() does not allow over 10 characters. 
+Test Path: Set name to supercalifagic and check that error message is received.
+
+
+Integration testing – 
+
+Test Requirement: Test that player’s hand has two cards after “hitting” twice.
+Test Path: player.hits() twice then printHand(). 
+
+Test Requirement: Test getHandValue().
+Test Path: A player is dealt a card. The hand is then printed, value is checked and bust status is checked. This is done repeatedly until the player busts.
+
+Test Requirement: Test clearHand().
+Test Path: Player hits(),printHand(), clearHand(),hits() printHand() again. 
+
+Test Requirement: Test stay()
+Test Path: Tester chooses a number between 15 and 19 to stay() on. The deck has 16 set of cards. The player will be dealt cards until player busts or stay value is reached. If the player busts hand is cleared and dealing begins again. If player reaches entered value then bust status is printed and program moves to next test.
+
+Test Requirement: Test multiple players playing from same deck.
+Test Path: Create three players. Deal two cards two each player, printHand(), hits(), printHand(). Finally printDeck() to check that players are playing from the same deck.
+
+Test Requirement: Test the probability of getting a 5 Card Charlie
+Test Path: A deck with 16 sets is created. A player will be dealt 5 cards at a time until deck is empty. After each set of five cards, hand is printed cleared and checked to see if player busted. A counter is kept for every time 5 Card Charlie is reached. When the deck is empty, 166 hands later, the counter variable is used to determine the probability.
+
+Test Requirement: Test the probability of getting a blackjack on first two cards.
+Test Path: A deck with 16 sets is created. A player is dealt 2 cards at a time until deck is empty (416 hands). After each set of two cards is dealt hand is cleared, printed and getHandValue() is checked. A counter is kept to keep track of amount of blackjacks. When the deck has been emptied the counter is used to determine the probability. 
+
+Integration testing – I tested my playerIntegration.cpp several times with different values.  I also went through the previous tests. I was able to test most of the interactions between all the classes.
+
+System testing – The overall design of the system still does as expected. With the addition of the player class a player can now have a hand (card hand) that is unique to that player. The player has the basic functions that are expected in a blackjack game.
