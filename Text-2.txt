@@ -1,0 +1,27 @@
+All test here were done as an integration test being that the functions needed to work with the other
+classes to have any use.
+Test Requirement: Test Hand creation.
+Test Path: Create hand add cards and printHand().
+Test Requirment: Deck.getName() gets name of deck
+Test Path: create deck and then call getName() on the deck.
+Test Requirement: Test Hand.addCard() while also testing Hand.printHand().
+Test Path: shuffledeck() then add card, printHand() (repeat 5 times), shuffleDeck() then PrintDeck() to make sure
+cards are no longer in the deck.
+Test Requirement: Test Hand.changeAceHandValue()
+Test Path: Give user the option to change ace value if an ace is in users hand by entering in ace position.
+printHand() to ensure card was changed and getHandTotal() to ensure that aces new value is in total hand value.
+Test Requirement: Test hand.getHandTotal()
+Test Path: Print a 2nd and 3rd hand. Call get getHandTotal() on both hands.
+Test Requirement: Test Hand.assocDeck()
+Test Path: Call assocDeck() on hand 2 and hand 3 to insure that it is associated to the same deck.
+Game class will probably determine if a deck exists for said hand.
+Test Requirement: Test clearHand() while also testing memory leaks.
+Test Path: clearHand(), printHand, addCard(), printHand().
+Test Requirement: Probability
+Test Path: Allow user amount of sets to be used deck(up to 16). Allow user to change value of ace. Deal pairs(black jack)
+or 5 cards(charlie) until deck is empty. Display probability results to check. Each set of dealt cards are totaled also.
+Integaration testing - I went through and ran the previous tests. I also tested my new integration_test2.cpp. In my
+integration 2 testing I tested much of the same compentents as the first integration in addition to the new Hand class.
+I aimed to test all interactions between the classes.
+System testing - The overall design of the system still does as expected. With the addition of the Hand class the
+program is able keep a hand, clear it and change ace value when needed. It works with the deck and cards as expected.

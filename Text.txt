@@ -1,0 +1,24 @@
+a.) Within each object I tested all the methods. When possible I gave them good and
+bad inputs and tested them separately. I tried to think of all possible situations when a method
+may be used or abused and replicate that in my tests.
+b.) Unit testing – I went through and tested all the methods in the card class. I did not test
+Deck methods with unit tests being that the Deck class depended on the Card class so I did that
+testing in my integration testing. I first tested setValue(), setName() and setSuit() by creating
+a card object. I then tested those methods individually. Next I tested the rest of the methods,
+which were getters by creating a card and calling the given method.
+Integration testing - I tested the card and deck class together by creating deck(s) and running
+tests. In the first test I create a deck, printed it, shuffled it and then printed it again.
+This showed me the deck in both states. Next I Dealt one card, printed the card, shuffled it,
+dealt it one more time and printed it again. With this test I am able to check that the deck no
+longer has those cards and view which cards were dealt.
+System testing - Being that there was only two classes and that they have already been tested
+together there wasn't much need for system testing. As a whole the system does, what it
+is designed to do. It creates cards, shuffles them and deals one. The cards are in a suitable data
+structure so that when the rest of the sytem is implementented the elements will be easy to retrieve.
+c.) In my testing I made sure to test good and bad inputs. In the setValue(), setSuit() methods
+I checked negative and positive values. When a deck is created I test to make sure that 1 to 16
+sets of cards are all that is allowed. I print cards often to make sure that the program is doing
+what it is expected. All inputs are checked and handled with error readings.
+d.) The results of the test were as expected. I did along the way have to rework my tests to ensure that
+all methods were being tested.
+The test files explain exactly what is being tested at the top of every test.
