@@ -1,0 +1,42 @@
+Unit testing - 
+
+Test Requirement: Test shuffle deck.
+Test Path: print, shuffle, print deck.
+
+Test Requirement: Test clearHand(), getHandTotal().
+Test Path: deal cards then print, get total, clear hand and print again.
+
+Test Requirement: Test dealOne().
+Test Path: dealOne(),print card, dealOne(), print card.
+
+Test Requirement: Test showHand().
+Test Path: deal 4 cards, showHand(), setShowhand(1), showHand()
+
+Test Requirement: Test clearDeck(), newDeck().
+Test Path: print deck, clearDeck(), print deck, newDeck(), print deck.
+
+Test Requirement: Test setBust(), getBust(), setShowHand(), getShowHand().
+Test Path: setBust(0), getbust(), setBust(1), getBust(), setShowHand(1), getShowhand(),
+		   setShowHand(0), getShowHand().
+		   
+Integration testing - 
+
+Test Requirement: Test 3 players and the dealer playing together.
+Test Path: Create players and dealer, deal them 2 cards each, have them hit
+		   until their hand value is 17 or higher, print hands and bust status.
+		   Repeat this process by playing another hand.
+
+Test Requirement: Test the probability of getting a 5 Card Charlie
+Test Path: A deck with 16 sets is created. A player will be dealt 5 cards at a time until deck is empty. 
+After each set of five cards, hand is printed cleared and checked to see if player busted. 
+A counter is kept for every time 5 Card Charlie is reached. When the deck is empty, 166 hands later, 
+the counter variable is used to determine the probability.
+
+Test Requirement: Test the probability of getting a blackjack on first two cards.
+Test Path: A deck with 16 sets is created. A player is dealt 2 cards at a time until deck is empty (416 hands). 
+After each set of two cards is dealt hand is cleared, printed and getHandValue() is checked. A counter is kept to 
+keep track of amount of blackjacks. When the deck has been emptied the counter is used to determine the 
+probability. 
+
+System testing – The overall design of the system still does as expected. With the addition of the Dealer 
+class the player is no longer able to use the deck leaving ownership to the dealer.
