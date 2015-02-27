@@ -1,15 +1,20 @@
 Each file's purpose:
-Card.h - interface for the Card class.
+Card.h - Interface for the Card class.
 Card.cpp - Card class implementation.
-Deck.h - interface for the Deck class.
-Deck.cpp - implementation for the Deck class.
-Hand.h - interface for the Hand class.
-Hand.cpp - implementation for the Hand class.
+Deck.h - Interface for the Deck class.
+Deck.cpp - Implementation for the Deck class.
+Hand.h - Interface for the Hand class.
+Hand.cpp - Implementation for the Hand class.
 unitCard.cpp - Performs units tests on Card class.
 integration_test1.cpp - Performs integration tests on Deck and Card.
 integration_test2.cpp - Performs integration tests on Deck, Card and Hand classes.
 unitPlayer.cpp - Performs unit tests on Player class.
 playerInteg.cpp - Performs integration tests on Deck, Card, Hand and Player classes.
+Dealer.h - Interface for the Dealer class.
+Dealer.cpp - Implementation for the Dealer class.
+unitDealerTest - Performs unit testing on Dealer class.
+dealerInteg - Performs integration tests on Deck, Card, Hand, Player and Dealer classes.
+test_logic - Performs RACC testing.
 makefile - a MakeFile for compiling.
 
 Instructions for running tests -
@@ -23,3 +28,9 @@ To run unitPlayer enter: make unitPlayer
 							output file: unitPlayer
 To run playerInteg enter: make integ3
 							output file: integ3
+To run dealerInteg enter: make dealerInteg
+							output file: dealerInteg
+To run unitDealerTest enter: make unitDealer
+							output file: unitDealer
+To run test_logic enter: make testLogic
+							output file: testLogic
