@@ -73,3 +73,7 @@ int Hand::changeAceHandValue(int pos){
 	}
 }
 
+void Hand::printFirstCard(){
+	_hand[0]->printCard();
+}
+

@@ -1,11 +1,14 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <string>
-class Deck;
+#include "Hand.h"
 class Hand;
 
 class Player{
 	public:
 		//Constructor
-		Player(Deck *deck,Hand *hand);
+		Player(std::string dkName);
 		//Destructor
 		~Player();
 		//Set name of player
@@ -13,14 +16,14 @@ class Player{
 		//Get name of player
 		std::string getName();
 		//hit, add one card to hand
-		int hits();
+		void hits(Card *card);
 		//Decline to add cards
 		void stays();
 		//Print hand
 		void printHand();
 		//Get total of card in hand
 		int getHandValue();
-		//clear hand which free up memory
+		//clear hand which frees up memory
 		void clearHand();
 		//Determine if player has busted.
 		int getBust();
@@ -28,15 +31,17 @@ class Player{
 		int getStays();
 		//Reset bust
 		void resetBust();
+		//Reset stay
+		void resetStay();
 
 	private: 
 		
 		std::string _name;//Name
 		//Ptr for player's hand
-		Hand *myHand;
-		//Ptr for player's deck
-		Deck *myDeck;
+		Hand myHand;
 		
 		int stay;
 		int bust;
 };		
+
+#endif

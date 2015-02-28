@@ -11,31 +11,36 @@ int main(){
 	Deck *deckptr = &deck;
 	Hand hand("deck");
 	Hand *handptr = &hand;
-	Player player(deckptr,handptr);
+	Player player("deck");
 	player.setName("Shelby");
+	int start;
 	deck.shuffleDeck();
 
 	cout << endl << "*** Test printHand() and getValue ***" << endl;
-	cout << endl << "Hand - "<< endl; 
-	player.hits();
-	player.hits();
+	cout << endl << "Press 1 to start testing - " << endl;
+	cin >> start;
+	cout << endl << "Hand - "<< endl;
+	player.hits(deck.dealOne());
+	player.hits(deck.dealOne());
 	player.printHand();
 	cout << endl << "Value of hand - " << player.getHandValue()<< endl;
 
-	cout << endl << "*** Test to see if hand busts ***" << endl; 
+	cout << endl << "*** Test to see if hand busts ***" << endl;
 	while(player.getBust() != 1){
-		player.hits();
+		player.hits(deck.dealOne());
 		player.printHand();
 		deck.shuffleDeck();
 		cout << "Hand value - " << player.getHandValue() << " Bust status - " << player.getBust() << endl << endl;
 	}
-	
+
 	cout << "*** Test clear() ***" << endl;
 	cout << "Print current hand, clear hand, print hand, add a card and print hand again" << endl << endl;
-	player.printHand();	
+	cout << endl << "Press 1 to start testing - " << endl;
+	cin >> start;
+	player.printHand();
 	player.clearHand();
 	player.printHand();
-	player.hits();
+	player.hits(deck.dealOne());
 	player.printHand();
 	cout << endl;
 
@@ -45,15 +50,15 @@ int main(){
 	Deck *deckptr2 = &deck2;
 	Hand hand2("deck2");
 	Hand *handptr2 = &hand2;
-	Player player2(deckptr2,handptr2);
+	Player player2("deck2");
 	player2.setName("Shelby");
 	deck2.shuffleDeck();
 	int pstay = 0;
 	int stay;
 	cin >> stay;
 	while(stay != pstay){
-		player2.hits();
-		player2.hits();
+		player2.hits(deck2.dealOne());
+		player2.hits(deck2.dealOne());
 		cout << "Two cards dealt, hand value - " << player2.getHandValue() << endl;
 	while(!player2.getBust() || player.getStays() == 1){
 		if(player2.getHandValue() == stay){
@@ -62,7 +67,7 @@ int main(){
 			cout << endl << "stay status - " << player2.getStays() << endl << endl;
 			break;
 		}
-		player2.hits();
+		player2.hits(deck2.dealOne());
 		cout << "hit, get value - " << player2.getHandValue() << endl;
 	}
 		player2.resetBust();
@@ -71,6 +76,8 @@ int main(){
 
 	cout << endl << "--------------------------- Test Multiple players ----------------------------------------" << endl;
 	cout << endl << "Shelby, Bob and Annie are going to play together - " << endl;
+    cout << endl << "Press 1 to start testing - " << endl;
+	cin >> start;
 	Deck mDeck(1,"mDeck");
 	Deck *mDptr = &mDeck;
 	Hand Shelbyh("mDeck");
@@ -79,37 +86,37 @@ int main(){
 	Hand *sHptr = &Shelbyh;
 	Hand *bHptr = &bobh;
 	Hand *aHptr = &annieh;
-	Player shelby = Player(mDptr,sHptr); 
-	Player bob = Player(mDptr,bHptr);
-	Player annie = Player(mDptr,aHptr);
+	Player shelby = Player("mDeck");
+	Player bob = Player("mDeck");
+	Player annie = Player("mDeck");
 
 	mDeck.shuffleDeck();
 	cout << endl << "Shelby dealt two cards - " << endl;
-	shelby.hits();
-	shelby.hits();
+	shelby.hits(mDeck.dealOne());
+	shelby.hits(mDeck.dealOne());
 	shelby.printHand();
-	cout << endl << "hits() printHand() - " << endl;	
-	shelby.hits();
+	cout << endl << "hits() printHand() - " << endl;
+	shelby.hits(mDeck.dealOne());
 	shelby.printHand();
 	if(shelby.getBust()){
 		cout << "You have busted!" << endl;
 	}
 	cout << endl << "Bob - " << endl;
-	bob.hits();
-	bob.hits();
+	bob.hits(mDeck.dealOne());
+	bob.hits(mDeck.dealOne());
 	bob.printHand();
-	cout << endl << "hits() printHand() - " << endl;	
-	bob.hits();
+	cout << endl << "hits() printHand() - " << endl;
+	bob.hits(mDeck.dealOne());
 	bob.printHand();
 	if(bob.getBust()){
 		cout << endl << "You have busted!" << endl;
 	}
 	cout << endl << "Annie - " << endl;
-	annie.hits();
-	annie.hits();
+	annie.hits(mDeck.dealOne());
+	annie.hits(mDeck.dealOne());
 	annie.printHand();
-	cout << endl << "hits() printHand() - " << endl;	
-	annie.hits();
+	cout << endl << "hits() printHand() - " << endl;
+	annie.hits(mDeck.dealOne());
 	annie.printHand();
 	if(annie.getBust()){
 		cout << endl << "You have busted!" << endl;
@@ -118,21 +125,23 @@ int main(){
 	mDeck.printDeck();
 
 	cout << endl << "------------------------- 5 card Charlie probability ----------------------------------------" << endl;
+	cout << endl << "Press 1 to start testing - " << endl;
+	cin >> start;
 	Deck chDeck(16,"chDeck");
 	chDeck.shuffleDeck();
 	Hand chHand("chDeck");
 	Hand *chHptr = &chHand;
 	Deck *chDptr = &chDeck;
-	Player charlie(chDptr,chHptr);
+	Player charlie("chDeck");
 	int counter = 0;
-	
+
 	for(int i=0; i<830; i= i+5){
 		cout << "i value - " << i << endl;
-		charlie.hits();
-		charlie.hits();
-		charlie.hits();
-		charlie.hits();
-		charlie.hits();
+		charlie.hits(chDeck.dealOne());
+		charlie.hits(chDeck.dealOne());
+		charlie.hits(chDeck.dealOne());
+		charlie.hits(chDeck.dealOne());
+		charlie.hits(chDeck.dealOne());
 		cout << endl << "Check for 5 card charlie - " << endl;
 		if(!charlie.getBust()){
 			cout << endl << "****Five Card Charlie!!!***" << endl;
@@ -146,7 +155,7 @@ int main(){
 			charlie.clearHand();
 			charlie.resetBust();
 		}
-		
+
 	}
 		int cPercent = (counter * 100) / (166);
 		cout << endl << "You played 166 hands and had  " << counter << " five card charlies" << endl;
@@ -162,12 +171,12 @@ int main(){
 		Hand bkjHand("bkjDeck");
 		Hand *bkjHptr = &bkjHand;
 		Deck *bkjDptr = &bkjDeck;
-		Player blackjack(bkjDptr,bkjHptr);
+		Player blackjack("bkjDeck");
 		int counter2 = 0;
-		
+
 		for(int i=0; i<832; i=i+2){
-			blackjack.hits();
-			blackjack.hits();
+			blackjack.hits(bkjDeck.dealOne());
+			blackjack.hits(bkjDeck.dealOne());
 			if(blackjack.getHandValue() == 21){
 				cout << endl << "****Black jack!!!****" << endl;
 				blackjack.printHand();
@@ -177,7 +186,7 @@ int main(){
 				cout << endl << "No 21, Try Again" << endl;
 				blackjack.printHand();
 				blackjack.clearHand();
-				
+
 			}
 		}
 			int cPercent2 = (counter2 * 100) / (416);

@@ -1,3 +1,6 @@
+#ifndef CARD_H
+#define CARD_H
+
 #include <string>
 #include <iostream>
 
@@ -33,3 +36,5 @@ class Card{
 		void setSuit(int suit); //set Card's suit
 		void setValue(int value); //Set Card's value
 };
+
+#endif

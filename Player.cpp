@@ -1,29 +1,23 @@
 #include <iostream>
+#include <string>
 #include "Player.h"
 #include "Card.h"
 #include "Hand.h"
 #include "Deck.h"
 
-
 using namespace std;
-Player::Player(Deck *deck,Hand *hand){
-	//Name will be set after game determine num of players
-	_name = "";
-	myHand = hand;
-	myDeck = deck;
-	//No way to bust on first two cards so bust = 0.
-	bust = 0;
-	//Player will choose to stay
-	stay = 0;
-}
+
+Player::Player(string dkName)
+	: _name(""), myHand(dkName),bust(0),stay(0)
+		{}
 
 Player::~Player(){}
 	
 
 
-int Player::hits(){
+void Player::hits(Card *card){
 	//add card and then determine if busted.
-	myHand->addCard(myDeck->dealOne());
+	myHand.addCard(card);
 	if(getHandValue()  > 21){
 		bust = 1;
 	}	
@@ -41,9 +35,12 @@ void Player::resetBust(){
 	bust = 0;
 }
 
+void Player::resetStay(){
+	stay = 0;
+}
 
 void Player::printHand(){
-	myHand->printHand();
+	myHand.printHand();
 }
 
 void Player::setName(string name){
@@ -59,11 +56,11 @@ void Player::setName(string name){
 }
 
 void Player::clearHand(){
-	myHand->clearHand();
+	myHand.clearHand();
 }
 
 int Player::getHandValue(){
-	myHand->getHandTotal();
+	myHand.getHandTotal();
 }
 
 string Player::getName(){

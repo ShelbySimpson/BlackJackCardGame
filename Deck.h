@@ -1,3 +1,6 @@
+#ifndef DECK_H
+#define DECK_H
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -26,6 +29,12 @@ class Deck{
 		//Get Name
 		std::string getName();
 
+		//Set up deck based on _numSets var
+		void gatherCards();
+
+		//clear card vector
+		void disposeCards();
+
 	private:
 		
 		//Vector to hold deck of cards.
@@ -34,4 +43,8 @@ class Deck{
 		//Deck name
 		std::string _name;
 		
+		//number of sets in deck
+		int _numSets;
 };
+
+#endif

@@ -11,7 +11,7 @@ int main(){
 	Deck *deckptr = &deck;
 	Hand hand("deck");
 	Hand *handptr = &hand;
-	Player player = Player(deckptr,handptr);
+	Player player = Player("deck");
 
 	cout << endl << "*** Test Constructor ***" << endl;
 	cout << endl << "---- stay and bust should = 0,name = empty" << endl;

@@ -12,31 +12,40 @@ using namespace std;
 //Constuctor. Param determines how many sets of cards you want in a deck.
 Deck::Deck(int numSets, string name){
 	_name = name;
+	_numSets = numSets;
 	if(numSets < 1 || numSets > 16){
 		cout << "A deck can only have 1-16 sets of cards. Try Again!"<< endl;
-	}else{
+		exit(1);
+	}
 
-Card *card;
-//Create deck by putting cards into _deck vector.
-int finished = 0;
-while(finished != numSets){
-	for(int i=1; i<5; i++){
-		for(int j=2; j<15; j++){
-			card = new Card(j,i);
-			_deck.push_back(card);
-		}
-	}
-	finished++;
-	}
-}
+	gatherCards();
 }
 
 Deck::~Deck(){
+		disposeCards();
+}
+
+void Deck::gatherCards(){
+	Card *card;
+	//Create deck by putting cards into _deck vector.
+	int finished = 0;
+	while(finished != _numSets){
+		for(int i=1; i<5; i++){
+			for(int j=2; j<15; j++){
+				card = new Card(j,i);
+				_deck.push_back(card);
+			}
+		}
+		finished++;
+		}
+}
+
+void Deck::disposeCards(){
 	int deckSize = _deck.size();
 	for(int i = 0; i<deckSize; i++){
-		delete  _deck[i];	
+		delete  _deck[i];
 	}
-		_deck.clear();
+	_deck.clear();
 }
 
 //Shuffle deck.
@@ -66,8 +75,12 @@ string Deck::getName(){
 //Prints every card in the deck.
 void Deck::printDeck(){
 	int dkSize = _deck.size();
+	if (dkSize != 0){
 	for(int i=0; i<dkSize; i++){
 	_deck[i]->printCard();
+	}
+	}else{
+		cout << endl << "Empty deck" << endl;
 	}
 }
 

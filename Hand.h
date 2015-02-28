@@ -1,3 +1,6 @@
+#ifndef HAND_H
+#define HAND_H
+
 #include <vector> 
 #include <string>
 
@@ -12,10 +15,16 @@ class Hand{
 		//Print cards in _hand vector.
 		void printHand();
 		int getHandTotal();
+
+		//print top card
+		void printFirstCard();
+
 		//Clears cards out of _hand vector.
 		void clearHand();
+
 		//get deck associated to hand.
 		std::string getAssocDeck();
+
 		//temp placeholder
 		int changeAceHandValue(int pos);
 
@@ -25,3 +34,5 @@ class Hand{
 		//Vector to hold hand.
 		std::vector<Card *>_hand;
 };
+
+#endif
