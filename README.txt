@@ -20,7 +20,7 @@ makefile - a MakeFile for compiling.
 Instructions for running tests -
 To run unit tests enter: make unitCard
 							ouput file: unitCard
-To run integration_ enter: make integ1
+To run integration_test1 enter: make integ1
 							output file: integ1
 To run integration_test2 enter: make integ2
 							output file: integ2

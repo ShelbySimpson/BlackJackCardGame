@@ -40,3 +40,8 @@ probability.
 
 System testing – The overall design of the system still does as expected. With the addition of the Dealer 
 class the player is no longer able to use the deck leaving ownership to the dealer.
+
+Logic coverage -
+I tested all cases of RACC for the predicates - dealer wins, player wins. Cards were dealt to both player
+and dealer until they busted or had a hand total greater than 16. Based on RACC criteria I had messages
+displayed when a certain test case was made.
