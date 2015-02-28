@@ -45,3 +45,5 @@ Logic coverage -
 I tested all cases of RACC for the predicates - dealer wins, player wins. Cards were dealt to both player
 and dealer until they busted or had a hand total greater than 16. Based on RACC criteria I had messages
 displayed when a certain test case was made.
+
+Win rates - Blackjack roughly 4% of the time. 5 Card Charlie roughly 1% of the time.
