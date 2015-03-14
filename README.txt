@@ -15,6 +15,9 @@ Dealer.cpp - Implementation for the Dealer class.
 unitDealerTest - Performs unit testing on Dealer class.
 dealerInteg - Performs integration tests on Deck, Card, Hand, Player and Dealer classes.
 test_logic - Performs RACC testing.
+Game.h - Interface for the Game class.
+Game.cpp - Implementation for the Game class.
+gameUnit.cpp - Initates game
 makefile - a MakeFile for compiling.
 
 Instructions for running tests -
@@ -34,3 +37,5 @@ To run unitDealerTest enter: make unitDealer
 							output file: unitDealer
 To run test_logic enter: make testLogic
 							output file: testLogic
+To run gameUnit enter: make gameUnit
+							output file: gameUnit
