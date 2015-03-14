@@ -20,7 +20,7 @@ void Player::hits(Card *card){
 	myHand.addCard(card);
 	if(getHandValue()  > 21){
 		bust = 1;
-	}	
+	}
 }
 
 void Player::stays(){
@@ -46,7 +46,7 @@ void Player::printHand(){
 void Player::setName(string name){
 	//Not allowing more then ten chars for a name
 	//Need output to be readable.
-	if(name.length() < 11 && name.length() > 0){
+	if(name.length() < 11 && name.length() >= 0){
 		_name = name;
 	}else{
 		cout << endl << "Name is too long, ten characters is the limit." << endl;
@@ -69,4 +69,13 @@ string Player::getName(){
 
 int Player::getStays(){
 	return stay;
+}
+
+int Player::findHighAce(){
+	int highAce = myHand.findHighAce();
+	return highAce;
+}
+
+void Player::changeAceValue(int pos){
+	myHand.changeAceHandValue(pos);
 }

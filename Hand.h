@@ -25,8 +25,14 @@ class Hand{
 		//get deck associated to hand.
 		std::string getAssocDeck();
 
-		//temp placeholder
+		//change ace value depending on card pos in hand
 		int changeAceHandValue(int pos);
+
+		//get num of card in hand
+		int handSize();
+
+		//find ace
+		int findHighAce();
 
 	private:
 		//Associated deck

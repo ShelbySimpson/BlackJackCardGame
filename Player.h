@@ -33,6 +33,10 @@ class Player{
 		void resetBust();
 		//Reset stay
 		void resetStay();
+		//find ace in hand
+		int findHighAce();
+		//change ace value
+		void changeAceValue(int pos);
 
 	private: 
 		

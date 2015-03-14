@@ -55,6 +55,12 @@ class Dealer{
     //change bust state-
     void setBust(int tf);
 
+	//find ace in hand
+	int findHighAce();
+
+	//change ace value
+	void changeAceValue(int pos);
+
     private:
 
     //dealer's deck

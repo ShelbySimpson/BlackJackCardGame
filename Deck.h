@@ -36,7 +36,7 @@ class Deck{
 		void disposeCards();
 
 	private:
-		
+
 		//Vector to hold deck of cards.
 		std::vector<Card *> _deck;
 		

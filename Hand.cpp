@@ -77,3 +77,20 @@ void Hand::printFirstCard(){
 	_hand[0]->printCard();
 }
 
+int Hand::handSize(){
+	return _hand.size();
+}
+
+//Returns position of high ace
+int Hand::findHighAce(){
+	int hSize = _hand.size();
+	int hValue;
+	for(int i = 0; i < hSize; i++){
+	hValue = _hand[i]->getValue();
+		if(hValue == 11){
+			return i;
+		}
+	}
+	return -1;
+}
+

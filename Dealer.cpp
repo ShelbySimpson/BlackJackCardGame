@@ -65,6 +65,7 @@ void Dealer::shuffleDeck(){
 
 //deal dealer until bust or hand == 17 to 21
 void Dealer::dealSelf(){
+	setShowHand(1);
 	while(hand.getHandTotal() < 17){
 		dealOneSelf();
 		if(hand.getHandTotal() > 21){
@@ -97,5 +98,14 @@ int Dealer:: getBust(){
 //_bust setter
 void Dealer::setBust(int tf){
 	_bust = tf;
+}
+
+int Dealer::findHighAce(){
+	int highAce = hand.findHighAce();
+	return highAce;
+}
+
+void Dealer::changeAceValue(int pos){
+	hand.changeAceHandValue(pos);
 }
 

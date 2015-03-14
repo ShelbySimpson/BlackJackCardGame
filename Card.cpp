@@ -140,7 +140,8 @@ string Card::getName(){
 //Print card's value suit and name.
 void Card::printCard(){
 	if(_value != 0 && _suit != "Invalid Suit" && _name !="Invalid Name"){
-		cout << "Value: " << getValue() << " | Suit: " << _suit << " | Name: " << _name << endl;
+		//cout << "Value: " << getValue() << " | Suit: " << _suit << " | Name: " << _name << endl;
+		cout << _name << " of " << _suit << "s" << endl;
 	}else{
 		cout << "This card does not belong to the deck, dispose of it. Please recycle!!!" << endl;	
 	}

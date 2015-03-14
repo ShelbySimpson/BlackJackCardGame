@@ -1,0 +1,37 @@
+Unit testing - 
+
+Test Requirement: check user inputs with invalid data.
+Test Path: I went through and entered invalid data types along with values that are out of range.
+
+Integration testing - 
+
+Test Requirement: Game works correctly with other objects.
+Test Path: Through the course of running a game check to see that objects behave correctly and output is 
+as expected.
+
+System tests - 
+
+I created a text file to redirect into program as user input -
+2
+bob
+sally
+stay
+stay
+yes
+...
+
+I ran it for 2000 iterations. I then changed the text to handle 5 players and ran another 2000
+iterations. After running the iterations I would look through some of the test results to make sure 
+the code was behaving as it should. This was a great opportunity to look for unique situations
+and check that the program behaved correctly under these situations too. For example, the gets
+multiple aces in one hand. I would check to see that the ace value was changed as expected.
+
+Acceptance tests - 
+
+The game abides by the specified black jack rules.
+A dealer will not deal to self if hand value is 17 to 21.
+A dealer will deal self until hand value is at least 17 then stop.
+Players can hit or stay depending on how they want to play the cards.
+If player busts with an ace the ace will change value to 1 and hand will be reevaluated.
+Players compete against dealer with winners and losers being notified of their status at the end of a game.
+Players have option of playing another game or quitting.
